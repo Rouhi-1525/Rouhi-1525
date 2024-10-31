@@ -1,59 +1,54 @@
-Online Chat Application
+Weather App
 
-This project implements a simple online chat application using Java socket programming. The application allows multiple users to connect to a central server, send messages, and receive messages from other users in real-time. 
+This Java-based Weather App provides real-time weather information and forecasts for any city worldwide. The application features a user-friendly graphical interface and utilizes the OpenWeatherMap API to fetch weather data.
 
-* Features
-- A dedicated server that handles multiple client connections.
-- Clients can register with a unique name.
-- Clients can send and receive messages instantly.
-- Ensures usernames and messages are valid.
--Each client operates in a separate thread, allowing simultaneous communication.
+Features
 
-* Components
-- ChatServer: The server class that manages client connections and broadcasts messages.
-- ChatClient: The client class that connects to the server, sends messages, and receives broadcasts.
+-  Fetch and display the current weather conditions for a specified location.
+-  Retrieve and display a 5-day weather forecast.
+-  Keep track of previously searched locations.
+-  Switch between Celsius and Fahrenheit.
+-  The background color and icons change based on the time of day and current weather conditions.
 
-* Requirements
-- Java Development Kit (JDK) 8 or higher.
-- A terminal or command prompt for running the server and client.
+ Getting Started
 
-* How to Run the Application
+ Prerequisites
 
- Step 1: Compile the Code
-1. Open a terminal/command prompt.
-2. Navigate to the project directory.
-3. Compile the server and client code:
-   javac server/ChatServer.java
-   javac client/ChatClient.java
+- Java Development Kit (JDK) installed (version 8 or higher recommended).
+- An IDE (like IntelliJ IDEA, Eclipse, or NetBeans) for easier code management.
+- Access to the OpenWeatherMap API with a valid API key. (Replace the placeholder key in the code.)
 
- Step 2: Start the Server
-1. In the terminal, navigate to the server directory.
-2. Run the server:
-   java server.ChatServer
+ Installation
+
+1. Clone the Repository:
+   git clone <repository-url>
+   cd weatherapp
    
- Step 3: Start the Client
-1. Open a new terminal window for each client.
-2. Navigate to the client directory.
-3. Run the client:
-   java client.ChatClient
-   
- Step 4: Connect and Chat
-1. Follow the prompts to register your name.
-2. Start sending messages. Type "bye" to exit the chat.
 
-* Code Structure
-- server/ChatServer.java: Contains the implementation of the chat server, including client handling and message broadcasting.
-- client/ChatClient.java: Contains the client-side logic for connecting to the server and interacting with users.
+2. Set Up API Key:
+   - Obtain an API key from [OpenWeatherMap](https://openweathermap.org/api).
+   - Replace the placeholder API key in the WeatherAPI class:
+     java
+     private static final String weatherApiKey = "YOUR_API_KEY";
+     
 
- * Example Interaction
-- Server Output:
-    The chat server is now active
-    rouhi with this ID 1 has joined the chat.
-    
-- Client Output:
-    Register your name
-    Please enter your name: rouhi
-    Hello rouhi, you have this ID 1. You can start the conversation now.
-    rouhi Connected to the chat.
-    
-This chat application demonstrates fundamental concepts of socket programming and concurrent user interaction. It provides a practical platform for understanding client-server architecture in network programming.
+3. Compile and Run:
+   - Compile the project and run the WeatherAppGUI class.
+
+ Usage
+
+1. Launch the application.
+2. Enter a city name in the input field and click the "Search" button.
+3. View the current weather and 5-day forecast displayed in the UI.
+4. Use the temperature unit selector to switch between Celsius and Fahrenheit.
+
+ Code Structure
+
+- WeatherAPI.java: Contains methods to fetch current weather data and forecasts from the OpenWeatherMap API.
+- SearchHistory.java: Manages the search history entries.
+- WeatherAppGUI.java: Implements the graphical user interface, handles user interactions, and displays weather data.
+
+ Libraries Used
+
+- org.json: For handling JSON data received from the OpenWeatherMap API.
+- javax.swing: For building the GUI components.
